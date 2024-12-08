@@ -1,0 +1,134 @@
+.choice{
+    display: flex;
+    overflow: hidden;
+    width:100%;
+    margin-left: 0;
+    cursor:pointer;
+    margin-bottom: 16px;
+}
+
+#fast_choice{
+    height: 92px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+#fast_choice .simplebar-content{
+    display: flex;
+} 
+#fast_choice li{
+    height: 54px;
+}
+#fast_choice li input{
+    display: none;
+}
+#fast_choice li svg{
+    display: flex;
+    position: absolute;
+    top: -28px;
+    left: 0px;
+    transition: var(--animation-time);
+    animation-timing-function:var(--amination-func);
+}
+.choice > li > input[type=radio]{
+    display: none;
+}
+.choice > li > input[type=radio][checked=true] ~ {
+    display: block;
+}
+.choice li{
+    background-color: var(--main-color-10-op);
+    list-style: none;
+    height:calc(100% - 18px);
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    transition: var(--animation-time);
+    animation-timing-function:var(--amination-func);
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    display: flex;
+    position: relative;
+}
+.choice li:hover{
+    background-color: var(--main-color);
+}
+.choice > li:has(input[type=radio][checked=true]){
+    background-color: var(--main-color);
+}
+.choice > li > svg{
+    display: flex;
+    position: absolute;
+    margin: -10px -10px;
+    opacity: 0;
+    overflow: hidden;
+    width:112px;
+}
+.choice > li > svg > path{
+    stroke: var(--card-color);
+}
+.choice li:hover > svg{
+    opacity: 100%;
+}
+.choice  li:has(input[type=radio][checked=true]) > svg{
+    opacity: 100%;
+}
+.choice li:last-child{
+    margin-right: 0px;
+}
+.choice li .option_price{
+    align-items: end;
+    display: flex;
+    width:82px;
+}
+.choice li .option_price h3{
+    color: var(--main-color);
+    font-family: "Inter";
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.89px;
+    margin:0;
+    transition: var(--animation-time);
+    animation-timing-function:var(--amination-func);
+    user-select: none
+}
+.choice  li:has(input[type=radio][checked=true]){
+    background-color: var(--main-color);
+}
+.choice  li:has(input[type=radio][checked=true]) path{
+    opacity: 0.1;
+}
+.choice li:hover > .option_price > h3{
+    color: var(--card-color);
+}
+.choice li:hover > .option_box > .option_price > h3{
+    color: var(--card-color);
+}
+.choice  li:has(input[type=radio][checked=true]) > .option_price > h3{
+    color: var(--card-color);
+}
+.choice  li:has(input[type=radio][checked=true]) > .option_box > .option_price > h3{
+    color: var(--card-color);
+}
+.choice li .option_text h3{
+    color: var(--card-contrast-color);
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 19px;
+    margin:0;
+    transition: var(--animation-time);
+    animation-timing-function:var(--amination-func);
+    user-select: none
+}
+.choice li:hover > .option_text > h3{
+    color: var(--card-color);
+}
+.choice li:hover > .option_box > .option_text > h3{
+    color: var(--card-color);
+}
+.choice  li:has(input[type=radio][checked=true]) > .option_text > h3{
+    color: var(--card-color);
+}
+.choice  li:has(input[type=radio][checked=true]) > .option_box > .option_text > h3{
+    color: var(--card-color);
+}

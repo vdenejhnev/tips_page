@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles/base.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" type="text/css" href="fonts/inter.css" />
+  <link rel="stylesheet" type="text/css" href="styles/choice.css" />
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="scripts/stars.js" defer></script>
+  <script src="scripts/merits.js" defer></script>
+  <script src="scripts/manageRadio.js" defer></script>
+  <script src="scripts/managePopup.js" defer></script>
+  <script src="scripts/slider.js" defer></script>
+  <script src="scripts/manageSpiral.js" defer></script>
+  <title>Final</title>
+</head>
+
+<body>
+  <header>
+    <div class="header_logo">
+      <img src="src/logotype.png" alt="Логотип" />
+    </div>
+  </header>
+  <main>
+    <section>
+      <div id="payee_card" class="card_wrapper">
+        <div class="card_inside">
+          <div id="profile_card" class="card_piece">
+            <div id="avatar_box">
+              <img src="src/Photo.png" alt="Аватарка" />
+            </div>
+            <div id="name-job_box">
+              <div class="card_regular__text">
+                <h3>Юлия Иванова</h3>
+              </div>
+              <div class="card_hence__text">
+                <h3>Официант в Pims</h3>
+              </div>
+            </div>
+          </div>
+          <div id="mydream_card" class="card_piece">
+            <svg width="370" height="93" viewBox="0 0 332 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.1"
+                d="M116.767 -54.4674C183.931 -58.3462 306.329 23.4056 335.158 84.1914C365.697 148.585 316.432 215.724 249.547 228.601C166.455 244.598 58.1142 178.234 27.1254 96.7422C8.24105 47.082 33.9219 8.73961 85.1541 -1.14162C148.843 -13.4254 242.049 35.588 268.148 97.1868C285.663 138.525 259.407 170.694 215.356 167.945C139.214 163.192 101.377 82.9627 101.377 82.9627"
+                stroke="#00B2FF" stroke-width="40" stroke-linecap="round" />
+            </svg>
+            <div class="thanks_container">
+              <div class="thanks_inner">
+                <div class="card_hence__text">
+                  <h3>Моя мечта</h3>
+                </div>
+                <div class="card_regular__text">
+                  <h3>
+                    В этом году хочу полететь в Сочи и покататься на яхте с
+                    друзьями!                     Спасибо вам, с вашей помощью, я смогу осуществить свою
+                    мечту!Спасибо вам, с вашей помощью, я смогу осуществить свою
+                    мечту!
+                    Спасибо вам, с вашей помощью, я смогу осуществить свою
+                    мечту!
+                    Спасибо вам, с вашей помощью, я смогу осуществить свою
+                    мечту!
+                  </h3>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div id="savings_card" class="card_piece">
+            <div id="left-box">
+              <div class="card_regular__text">
+                <h3>Осталось накопить</h3>
+              </div>
+              <div id="money-box">
+                <span>12 500 ₽</span>
+                <span> из 120 000 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div id="progress_card" class="card_piece">
+            <div id="savings-box_progressbar">
+              <progress value="107.5" max="120"></progress>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <form>
+      <section>
+        <div id="send_card" class="card_wrapper">
+          <div class="card_inside">
+            <div class="card_piece">
+              <div class="inner_piece">
+                <div class="card_header__text">
+                  <h3>Отправить на мечту</h3>
+                </div>
+                <div id="output_price">
+                  <h3>0₽</h3>
+                </div>
+              </div>
+            </div>
+            <div class="card_piece">
+              <div class="inner_piece">
+                <div class="card_regular__text">
+                  <h3>Быстрый выбор</h3>
+                </div>
+                <ul id="fast_choice" data-simplebar class="choice has_scroll">
+                  <li class="option">
+                    <input type="radio" name="choice" value="50" />
+                    <div class="option_price">
+                      <h3>50₽</h3>
+                    </div>
+                    <svg width="102" height="100" viewBox="0 0 102 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.1"
+                        d="M30.9146 10.3397C62.793 8.49872 120.888 47.3012 134.571 76.1524C149.066 106.716 125.683 138.583 93.9368 144.695C54.4984 152.287 3.07563 120.788 -11.6328 82.1095C-20.596 58.5389 -8.40695 40.3402 15.9098 35.6502C46.139 29.8198 90.3782 53.0834 102.766 82.3206C111.079 101.941 98.6169 117.21 77.7087 115.905C41.5687 113.649 23.61 75.5692 23.61 75.5692"
+                        stroke="white" stroke-width="20" stroke-linecap="round" />
+                    </svg>
+                  </li>
+                  <li class="option">
+                    <input type="radio" name="choice" value="150" />
+                    <div class="option_price">
+                      <h3>150₽</h3>
+                    </div>
+                    <svg width="102" height="100" viewBox="0 0 102 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.1"
+                        d="M30.9146 10.3397C62.793 8.49872 120.888 47.3012 134.571 76.1524C149.066 106.716 125.683 138.583 93.9368 144.695C54.4984 152.287 3.07563 120.788 -11.6328 82.1095C-20.596 58.5389 -8.40695 40.3402 15.9098 35.6502C46.139 29.8198 90.3782 53.0834 102.766 82.3206C111.079 101.941 98.6169 117.21 77.7087 115.905C41.5687 113.649 23.61 75.5692 23.61 75.5692"
+                        stroke="white" stroke-width="20" stroke-linecap="round" />
+                    </svg>
+                  </li>
+                  <li class="option">
+                    <input type="radio" name="choice" value="300" />
+                    <div class="option_price">
+                      <h3>300₽</h3>
+                    </div>
+                    <svg width="102" height="100" viewBox="0 0 102 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.1"
+                        d="M30.9146 10.3397C62.793 8.49872 120.888 47.3012 134.571 76.1524C149.066 106.716 125.683 138.583 93.9368 144.695C54.4984 152.287 3.07563 120.788 -11.6328 82.1095C-20.596 58.5389 -8.40695 40.3402 15.9098 35.6502C46.139 29.8198 90.3782 53.0834 102.766 82.3206C111.079 101.941 98.6169 117.21 77.7087 115.905C41.5687 113.649 23.61 75.5692 23.61 75.5692"
+                        stroke="white" stroke-width="20" stroke-linecap="round" />
+                    </svg>
+                  </li>
+                  <li class="option">
+                    <input type="radio" name="choice" value="1000" />
+                    <div class="option_price">
+                      <h3>1000₽</h3>
+                    </div>
+                    <svg width="102" height="100" viewBox="0 0 102 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.1"
+                        d="M30.9146 10.3397C62.793 8.49872 120.888 47.3012 134.571 76.1524C149.066 106.716 125.683 138.583 93.9368 144.695C54.4984 152.287 3.07563 120.788 -11.6328 82.1095C-20.596 58.5389 -8.40695 40.3402 15.9098 35.6502C46.139 29.8198 90.3782 53.0834 102.766 82.3206C111.079 101.941 98.6169 117.21 77.7087 115.905C41.5687 113.649 23.61 75.5692 23.61 75.5692"
+                        stroke="white" stroke-width="20" stroke-linecap="round" />
+                    </svg>
+                  </li>
+                </ul>
+              </div>
+              <div class="inner_piece">
+                <div class="card_regular__text">
+                  <h3>Введите свою сумму (₽)</h3>
+                </div>
+                <input type="number" name="" min="1" id="total_textarea" placeholder="Например 50₽" />
+                <div class="container">
+                  <div class="card_piece" id="expand_menu">
+                    <div class="inner_piece">
+                      <div class="card_regular__text">
+                        <h3>Оцените качество работы</h3>
+                      </div>
+                    </div>
+                    <div class="inner_piece">
+                      <div id="star_box__container">
+                        <div id="quality_of_work">
+                          <h3 id="quality_of_work__text"></h3>
+                        </div>
+                        <div id="stars">
+                          <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                          <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                          <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                          <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                          <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card_piece">
+                    <div class="inner_piece">
+                      <div class="card_regular__text">
+                        <h3>За что похвалить сотрудника</h3>
+                      </div>
+                    </div>
+                    <div class="inner_piece">
+                      <ul data-simplebar id="merits" class="has_scroll">
+                        <li class="merit">
+                          <div class="merit_container">
+                            <input type="checkbox" name="merits" />
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path opacity="0.5"
+                                d="M2.5 11.4214C2.5 17.5001 7.52429 20.7393 11.2022 23.6387C12.5 24.6618 13.75 25.6251 15 25.6251C16.25 25.6251 17.5 24.6618 18.7979 23.6387C22.4757 20.7393 27.5 17.5001 27.5 11.4214C27.5 5.34276 20.6247 1.03189 15 6.87585C9.3752 1.03189 2.5 5.34276 2.5 11.4214Z"
+                                fill="#959595" />
+                              <path
+                                d="M20.625 16.6089C17.5314 13.2142 13.75 15.7183 13.75 19.2494C13.75 22.4479 16.0175 24.293 17.948 25.864L18.0023 25.9081C18.1843 26.0561 18.3629 26.2019 18.5363 26.3462C19.25 26.9404 19.9375 27.5 20.625 27.5C21.3125 27.5 22 26.9404 22.7137 26.3462C24.7366 24.662 27.5 22.7804 27.5 19.2494C27.5 18.0894 27.0919 17.0402 26.4342 16.2747C25.0898 14.7097 22.7024 14.3294 20.625 16.6089Z"
+                                fill="#959595" />
+                            </svg>
+                            <div class="merit_title">
+                              <h3>Вежливость</h3>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="merit">
+                          <div class="merit_container">
+                            <input type="checkbox" name="merits" />
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path opacity="0.5"
+                                d="M2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9035 2.5 27.5 8.09644 27.5 15C27.5 21.9035 21.9035 27.5 15 27.5C8.09644 27.5 2.5 21.9035 2.5 15Z"
+                                fill="#959595" />
+                              <path
+                                d="M14.034 10.7112L11.5152 12.717C10.4584 13.5585 9.93006 13.9794 10.0332 14.4491L10.0387 14.4724C10.1562 14.9393 10.826 15.1188 12.1655 15.4778C12.9099 15.6771 13.2821 15.7769 13.4568 16.059L13.4656 16.0739C13.6341 16.3594 13.5383 16.717 13.3466 17.4323L13.2965 17.6191C12.7651 19.6021 12.4995 20.5935 13.0111 20.9138C13.5228 21.2339 14.3369 20.5856 15.965 19.2891L18.4839 17.2833C19.5406 16.4418 20.069 16.021 19.9659 15.5511L19.9605 15.5279C19.8429 15.061 19.1731 14.8815 17.8336 14.5226C17.0893 14.3231 16.717 14.2234 16.5424 13.9413L16.5335 13.9264C16.365 13.6409 16.4609 13.2833 16.6525 12.5681L16.7026 12.3811C17.2339 10.3982 17.4996 9.40672 16.9879 9.08652C16.4763 8.76633 15.6621 9.41462 14.034 10.7112Z"
+                                fill="#959595" />
+                            </svg>
+
+                            <div class="merit_title">
+                              <h3>Скорость</h3>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="merit">
+                          <div class="merit_container">
+                            <input type="checkbox" name="merits" />
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path opacity="0.5"
+                                d="M26.25 19.9979V12.4978C26.25 8.96229 26.25 7.19452 25.1516 6.09617C24.1911 5.1357 22.7188 5.01514 20 5H10C7.28121 5.01514 5.80883 5.1357 4.84835 6.09617C3.75 7.19452 3.75 8.96229 3.75 12.4978V19.9979C3.75 23.5334 3.75 25.3011 4.84835 26.3995C5.9467 27.4979 7.71446 27.4979 11.25 27.4979H18.75C22.2855 27.4979 24.0532 27.4979 25.1516 26.3995C26.25 25.3011 26.25 23.5334 26.25 19.9979Z"
+                                fill="#959595" />
+                              <path
+                                d="M10 4.375C10 3.33946 10.8395 2.5 11.875 2.5H18.125C19.1605 2.5 20 3.33946 20 4.375V5.625C20 6.66054 19.1605 7.5 18.125 7.5H11.875C10.8395 7.5 10 6.66054 10 5.625V4.375Z"
+                                fill="#959595" />
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.4354 13.1103C19.7886 13.4888 19.7682 14.0821 19.3896 14.4353L14.0325 19.4353C13.6724 19.7715 13.1134 19.7715 12.7531 19.4353L10.6103 17.4353C10.2318 17.0821 10.2114 16.4888 10.5646 16.1103C10.9179 15.7318 11.5112 15.7113 11.8897 16.0646L13.3929 17.4676L18.1104 13.0646C18.4889 12.7113 19.0821 12.7318 19.4354 13.1103Z"
+                                fill="#959595" />
+                            </svg>
+
+                            <div class="merit_title">
+                              <h3>Решил вопрос</h3>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="merit">
+                          <div class="merit_container">
+                            <input type="checkbox" name="merits" />
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2.5 15.155C2.5 8.16586 8.09641 2.5 14.9999 2.5C21.9035 2.5 27.4999 8.16586 27.4999 15.155V21.7094C27.5003 22.7305 27.5005 23.4307 27.321 24.0455C26.97 25.2477 26.1308 26.2421 25.0125 26.7806C24.4406 27.0561 23.7574 27.165 22.761 27.3239L22.5986 27.3499C22.2442 27.4065 21.9415 27.4549 21.6903 27.4799C21.4289 27.5059 21.1624 27.5139 20.8897 27.4595C19.9928 27.2806 19.253 26.6407 18.9385 25.7715C18.843 25.5074 18.8092 25.2395 18.7938 24.9741C18.779 24.7191 18.779 24.4087 18.779 24.0456L18.7789 18.8301C18.7782 18.2982 18.7778 17.8406 18.8994 17.4487C19.1777 16.552 19.9047 15.8719 20.8096 15.6615C21.2051 15.5695 21.6558 15.6061 22.1794 15.6486L22.2959 15.658L22.4331 15.669C23.4128 15.7469 24.083 15.8002 24.652 16.0132C25.0519 16.163 25.4226 16.3691 25.7558 16.622V15.155C25.7558 9.1411 20.9401 4.26582 14.9999 4.26582C9.0597 4.26582 4.24417 9.1411 4.24417 15.155V16.622C4.5772 16.3691 4.94804 16.163 5.34786 16.0132C5.91681 15.8002 6.58706 15.7469 7.56669 15.669L7.70397 15.658L7.82051 15.6486C8.34418 15.6061 8.79476 15.5695 9.1903 15.6615C10.0951 15.8719 10.8221 16.552 11.1005 17.4487C11.2222 17.8406 11.2216 18.2982 11.221 18.8301L11.2209 24.0456C11.2209 24.4087 11.2209 24.7191 11.2061 24.9741C11.1907 25.2395 11.1569 25.5074 11.0613 25.7715C10.7469 26.6407 10.0072 27.2806 9.11015 27.4595C8.83751 27.5139 8.57094 27.5059 8.3096 27.4799C8.05839 27.4549 7.75561 27.4065 7.40128 27.3499L7.23882 27.3239C6.24249 27.165 5.55921 27.0561 4.98739 26.7806C3.86917 26.2421 3.02985 25.2477 2.67885 24.0455C2.53084 23.5386 2.50505 22.9735 2.50075 22.2184L2.5 21.9754V15.155Z"
+                                fill="#959595" />
+                              <g opacity="0.5">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M15 7.1875C15.5178 7.1875 15.9375 7.60724 15.9375 8.125V14.375C15.9375 14.8927 15.5178 15.3125 15 15.3125C14.4822 15.3125 14.0625 14.8927 14.0625 14.375V8.125C14.0625 7.60724 14.4822 7.1875 15 7.1875Z"
+                                  fill="#959595" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M18.75 9.0625C19.2678 9.0625 19.6875 9.48224 19.6875 10V12.5C19.6875 13.0178 19.2678 13.4375 18.75 13.4375C18.2322 13.4375 17.8125 13.0178 17.8125 12.5V10C17.8125 9.48224 18.2322 9.0625 18.75 9.0625Z"
+                                  fill="#959595" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M11.25 9.0625C11.7678 9.0625 12.1875 9.48224 12.1875 10V12.5C12.1875 13.0178 11.7678 13.4375 11.25 13.4375C10.7322 13.4375 10.3125 13.0178 10.3125 12.5V10C10.3125 9.48224 10.7322 9.0625 11.25 9.0625Z"
+                                  fill="#959595" />
+                              </g>
+                            </svg>
+
+                            <div class="merit_title">
+                              <h3>Связь</h3>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inner_piece">
+                <div class="card_regular__text">
+                  <h3>Ваш комментарий</h3>
+                </div>
+                <textarea name="" type="text" spellcheck id="comment_textarea" placeholder="Все было замечательно! "
+                  rows="5"></textarea>
+                <div class="container">
+                  <button type="reset" id="delete_btn">
+                    <h3>Стереть</h3>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div id="addition_card" class="card_wrapper">
+          <div class="card_inside">
+            <div class="card_piece">
+              <div class="inner_piece">
+                <div class="card_regular__text">
+                  <h3>Дополнительно</h3>
+                </div>
+                <ul id="add_choice" class="choice has_scroll">
+                  <li class="option">
+                    <input type="radio" name="add choice" value="1500" />
+                    <div class="option_price">
+                      <h3>1500₽</h3>
+                    </div>
+                    <div class="option_box">
+                      <div class="option_info">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M10 9.08333V13.6667M10 18.25C5.44365 18.25 1.75 14.5564 1.75 10C1.75 5.44365 5.44365 1.75 10 1.75C14.5564 1.75 18.25 5.44365 18.25 10C18.25 14.5564 14.5564 18.25 10 18.25ZM10.0457 6.33333V6.425L9.95435 6.42518V6.33333H10.0457Z"
+                            stroke="#00B2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <div class="option_text">
+                        <h3>Букет цветов</h3>
+                      </div>
+                    </div>
+                    <svg width="115" height="150" viewBox="0 0 115 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.1"
+                        d="M30.9146 10.3397C62.793 8.49872 120.888 47.3012 134.571 76.1524C149.066 106.716 125.683 138.583 93.9368 144.695C54.4984 152.287 3.07563 120.788 -11.6328 82.1095C-20.596 58.5389 -8.40695 40.3402 15.9098 35.6502C46.139 29.8198 90.3782 53.0834 102.766 82.3206C111.079 101.941 98.6169 117.21 77.7087 115.905C41.5687 113.649 23.61 75.5692 23.61 75.5692"
+                        stroke="white" stroke-width="20" stroke-linecap="round" />
+                    </svg>
+                  </li>
+                  <li class="option">
+                    <input type="radio" name="add choice" value="300" />
+                    <div class="option_price">
+                      <h3>300₽</h3>
+                    </div>
+                    <div class="option_box">
+                      <div class="option_info">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M10 9.08333V13.6667M10 18.25C5.44365 18.25 1.75 14.5564 1.75 10C1.75 5.44365 5.44365 1.75 10 1.75C14.5564 1.75 18.25 5.44365 18.25 10C18.25 14.5564 14.5564 18.25 10 18.25ZM10.0457 6.33333V6.425L9.95435 6.42518V6.33333H10.0457Z"
+                            stroke="#00B2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+
+                      <div class="option_text">
+                        <h3>Сладкий подарок</h3>
+                      </div>
+                    </div>
+                    <svg width="115" height="150" viewBox="0 0 116 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.1"
+                        d="M30.9146 10.3397C62.793 8.49872 120.888 47.3012 134.571 76.1524C149.066 106.716 125.683 138.583 93.9368 144.695C54.4984 152.287 3.07563 120.788 -11.6328 82.1095C-20.596 58.5389 -8.40695 40.3402 15.9098 35.6502C46.139 29.8198 90.3782 53.0834 102.766 82.3206C111.079 101.941 98.6169 117.21 77.7087 115.905C41.5687 113.649 23.61 75.5692 23.61 75.5692"
+                        stroke="white" stroke-width="20" stroke-linecap="round" />
+                    </svg>
+                  </li>
+                  <li class="option">
+                    <input type="radio" name="add choice" value="1000" />
+                    <div class="option_price">
+                      <h3>1000₽</h3>
+                    </div>
+                    <div class="option_box">
+                      <div class="option_info">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M10 9.08333V13.6667M10 18.25C5.44365 18.25 1.75 14.5564 1.75 10C1.75 5.44365 5.44365 1.75 10 1.75C14.5564 1.75 18.25 5.44365 18.25 10C18.25 14.5564 14.5564 18.25 10 18.25ZM10.0457 6.33333V6.425L9.95435 6.42518V6.33333H10.0457Z"
+                            stroke="#00B2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <div class="option_text">
+                        <h3>Такси до дома</h3>
+                      </div>
+                    </div>
+                    <svg width="115" height="150" viewBox="0 0 116 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.1"
+                        d="M30.9146 10.3397C62.793 8.49872 120.888 47.3012 134.571 76.1524C149.066 106.716 125.683 138.583 93.9368 144.695C54.4984 152.287 3.07563 120.788 -11.6328 82.1095C-20.596 58.5389 -8.40695 40.3402 15.9098 35.6502C46.139 29.8198 90.3782 53.0834 102.766 82.3206C111.079 101.941 98.6169 117.21 77.7087 115.905C41.5687 113.649 23.61 75.5692 23.61 75.5692"
+                        stroke="white" stroke-width="20" stroke-linecap="round" />
+                    </svg>
+                  </li>
+                  <li class="option">
+                    <input type="radio" name="add choice" value="10000" />
+                    <div class="option_price">
+                      <h3>10000₽</h3>
+                    </div>
+                    <div class="option_box">
+                      <div class="option_info">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M10 9.08333V13.6667M10 18.25C5.44365 18.25 1.75 14.5564 1.75 10C1.75 5.44365 5.44365 1.75 10 1.75C14.5564 1.75 18.25 5.44365 18.25 10C18.25 14.5564 14.5564 18.25 10 18.25ZM10.0457 6.33333V6.425L9.95435 6.42518V6.33333H10.0457Z"
+                            stroke="#00B2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+
+                      <div class="option_text">
+                        <h3>Вкусный ужин</h3>
+                      </div>
+                    </div>
+                    <svg width="115" height="150" viewBox="0 0 116 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.1"
+                        d="M30.9146 10.3397C62.793 8.49872 120.888 47.3012 134.571 76.1524C149.066 106.716 125.683 138.583 93.9368 144.695C54.4984 152.287 3.07563 120.788 -11.6328 82.1095C-20.596 58.5389 -8.40695 40.3402 15.9098 35.6502C46.139 29.8198 90.3782 53.0834 102.766 82.3206C111.079 101.941 98.6169 117.21 77.7087 115.905C41.5687 113.649 23.61 75.5692 23.61 75.5692"
+                        stroke="white" stroke-width="20" stroke-linecap="round" />
+                    </svg>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div id="send_btn"><button disabled>Отправить на мечту</button></div>
+      </section>
+    </form>
+  </main>
+  <div class="popup add_info" id="additional_details_bouquet">
+    <div class="popup_container">
+      <div class="popup_content__container">
+        <div class="card_piece">
+          <div class="inner_piece">
+            <div class="card_header__text">
+              <h3>Букет цветов</h3>
+            </div>
+          </div>
+          <div class="inner_piece">
+            <div class="sponsor_box">
+              <h3>Floww партнёр</h3>
+            </div>
+          </div>
+        </div>
+        <div class="slider_container">
+          <div class="slider"><img src="src/slider1.png" /></div>
+          <div class="nav_dots__container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="card_piece">
+          <div id="popup_header">
+            <h3>1 500 ₽</h3>
+          </div>
+          <div data-simplebar class="popup_text">
+            <h3>
+              Официанты часто остаются незамеченными героями ресторанного
+              мира, ежедневно сталкиваясь с множеством вызовов и трудностей.
+              Они не только обслуживают клиентов, но и создают атмосферу уюта
+              и гостеприимства. Поэтому иногда хочется выразить благодарность
+              и признательность за их труд и профессионализм.
+            </h3>
+            <p></p>
+            <h3>
+              Одним из способов выразить благодарность может стать небольшой
+              знак внимания в виде букета цветов. Этот жест не только порадует
+              официанта, но и поднимет ему настроение на весь день.
+            </h3>
+          </div>
+        </div>
+        <div class="card_piece">
+          <button class="close_popup">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup add_info" id="additional_details_sweet">
+    <div class="popup_container">
+      <div class="popup_content__container">
+        <div class="card_piece">
+          <div class="inner_piece">
+            <div class="card_header__text">
+              <h3>Сладкий подарок</h3>
+            </div>
+          </div>
+          <div class="inner_piece">
+            <div class="sponsor_box">
+              <h3>Сладкий подарок партнёр</h3>
+            </div>
+          </div>
+        </div>
+        <div class="slider_container">
+          <div class="slider"><img src="src/slider1.png" /></div>
+          <div class="nav_dots__container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="card_piece">
+          <div id="popup_header">
+            <h3>300 ₽</h3>
+          </div>
+          <div class="popup_text" data-simplebar>
+            <h3>
+              Официанты часто остаются незамеченными героями ресторанного
+              мира, ежедневно сталкиваясь с множеством вызовов и трудностей.
+              Они не только обслуживают клиентов, но и создают атмосферу уюта
+              и гостеприимства. Поэтому иногда хочется выразить благодарность
+              и признательность за их труд и профессионализм.
+            </h3>
+            <p></p>
+            <h3>
+              Одним из способов выразить благодарность может стать небольшой
+              знак внимания в виде букета цветов. Этот жест не только порадует
+              официанта, но и поднимет ему настроение на весь день.
+            </h3>
+          </div>
+        </div>
+        <div class="card_piece">
+          <button class="close_popup">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup add_info" id="additional_details_taxi">
+    <div class="popup_container">
+      <div class="popup_content__container">
+        <div class="card_piece">
+          <div class="inner_piece">
+            <div class="card_header__text">
+              <h3>Такси</h3>
+            </div>
+          </div>
+          <div class="inner_piece">
+            <div class="sponsor_box">
+              <h3>Такси партнёр</h3>
+            </div>
+          </div>
+        </div>
+        <div class="slider_container">
+          <div class="slider"><img src="src/slider1.png" /></div>
+          <div class="nav_dots__container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="card_piece">
+          <div id="popup_header">
+            <h3>1000 ₽</h3>
+          </div>
+          <div class="popup_text" data-simplebar>
+            <h3>
+              Официанты часто остаются незамеченными героями ресторанного
+              мира, ежедневно сталкиваясь с множеством вызовов и трудностей.
+              Они не только обслуживают клиентов, но и создают атмосферу уюта
+              и гостеприимства. Поэтому иногда хочется выразить благодарность
+              и признательность за их труд и профессионализм.
+            </h3>
+            <p></p>
+            <h3>
+              Одним из способов выразить благодарность может стать небольшой
+              знак внимания в виде букета цветов. Этот жест не только порадует
+              официанта, но и поднимет ему настроение на весь день.
+            </h3>
+          </div>
+        </div>
+        <div class="card_piece">
+          <button class="close_popup">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup add_info" id="additional_details_dinner">
+    <div class="popup_container">
+      <div class="popup_content__container">
+        <div class="card_piece">
+          <div class="inner_piece">
+            <div class="card_header__text">
+              <h3>Вкусный ужин</h3>
+            </div>
+          </div>
+          <div class="inner_piece">
+            <div class="sponsor_box">
+              <h3>Вкусный ужин партнёр</h3>
+            </div>
+          </div>
+        </div>
+        <div class="slider_container">
+          <div class="slider"><img src="src/slider1.png" /></div>
+          <div class="nav_dots__container">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="card_piece">
+          <div id="popup_header">
+            <h3>10 000 ₽</h3>
+          </div>
+          <div class="popup_text" data-simplebar>
+            <h3>
+              Официанты часто остаются незамеченными героями ресторанного
+              мира, ежедневно сталкиваясь с множеством вызовов и трудностей.
+              Они не только обслуживают клиентов, но и создают атмосферу уюта
+              и гостеприимства. Поэтому иногда хочется выразить благодарность
+              и признательность за их труд и профессионализм.
+            </h3>
+            <p></p>
+            <h3>
+              Одним из способов выразить благодарность может стать небольшой
+              знак внимания в виде букета цветов. Этот жест не только порадует
+              официанта, но и поднимет ему настроение на весь день.
+            </h3>
+          </div>
+        </div>
+        <div class="card_piece">
+          <button class="close_popup">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup visible" id="fail">
+    <div class="popup_container">
+      <div class="popup_content__container">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M30 55C43.8071 55 55 43.8071 55 30C55 16.1929 43.8071 5 30 5C16.1929 5 5 16.1929 5 30C5 43.8071 16.1929 55 30 55Z"
+            stroke="#FF0606" stroke-width="4" />
+          <path d="M36.2501 23.7501L23.7501 36.25M23.75 23.75L36.2501 36.25" stroke="#FF0606" stroke-width="4"
+            stroke-linecap="round" />
+        </svg>
+        <div class="popup_text">
+          <h3>Ошибка в отправке данных, попробуйте снова</h3>
+        </div>
+        <button id="close_fail_popup">Попробовать снова</button>
+      </div>
+    </div>
+  </div>
+  <div class="popup visible" id="success">
+    <div class="popup_container">
+      <div class="popup_content__container">
+        <div class="card_piece">
+          <div class="avatar_box"><img src="src/Photo.png" alt="" /></div>
+          <div class="name_box">
+            <div class="name">
+              <h3>Юлия Иванова</h3>
+            </div>
+            <div class="ocupation">
+              <h3>Официант в Pims</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card_piece">
+          <div class="thanks_box has_no_scroll">
+            <svg viewBox="0 0 332 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.1"
+                d="M116.767 -54.4674C183.931 -58.3462 306.329 23.4056 335.158 84.1914C365.697 148.585 316.432 215.724 249.547 228.601C166.455 244.598 58.1142 178.234 27.1254 96.7422C8.24105 47.082 33.9219 8.73961 85.1541 -1.14162C148.843 -13.4254 242.049 35.588 268.148 97.1868C285.663 138.525 259.407 170.694 215.356 167.945C139.214 163.192 101.377 82.9627 101.377 82.9627"
+                stroke="#00B2FF" stroke-width="40" stroke-linecap="round" />
+            </svg>
+            <div class="thanks_container">
+              <div class="thanks_inner">
+                <div class="thanks_title">
+                  <h3>Юлия</h3>
+                </div>
+                <div class="thanks_text">
+                  <h3>
+                    Спасибо вам, с вашей помощью, я смогу осуществить свою
+                    мечту!Спасибо вам, с вашей помощью, я смогу осуществить свою
+                    мечту!
+                    Спасибо вам, с вашей помощью, я смогу осуществить свою
+                    мечту!
+                    Спасибо вам, с вашей помощью, я смогу осуществить свою
+                    мечту!
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card_piece">
+          <div class="you_sent__card">
+            <div class="sent_title">
+              <h3>Вы отправили:</h3>
+            </div>
+            <div class="sent_total">
+              <h3>15 000₽</h3>
+            </div>
+            <div class="sent_additional">
+              <div class="additional_block">
+                <h3>+ Цветы</h3>
+              </div>
+              <div class="additional_block">
+                <h3>+ Такси до дома</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card_piece">
+          <div class="button_box">
+            <button id="send_more">Отправить ещё</button>
+            <button id="return">На главную</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div id="footer_text">
+      <h3>Разработано</h3>
+    </div>
+    <div id="footer_team">
+      <h3>Thank.</h3>
+      <h3 id="team">Team</h3>
+    </div>
+  </footer>
+  <div id="pillow"></div>
+</body>
+
+</html>
