@@ -1,24 +1,34 @@
 <template>
-  <ProfileCard :user="employeeCard.user" />
-  <SavingsCard :amountSaved="employeeCard.user.amountSaved" :amountGoal="employeeCard.user.amountGoal" />
-  <SendCard :availableAmounts="employeeCard.options.availableAmounts" :gifts="employeeCard.options.gifts" />
-  <AdditionCard :merits="employeeCard.options.merits" />
+  <PageHeader />
+  <main>
+    <ProfileCard :user="employeeCard.user" />
+    <form>
+      <SendCard :availableAmounts="employeeCard.options.availableAmounts" :merits="employeeCard.options.merits"/>
+      <AdditionCard :gifts="employeeCard.options.gifts" />
+      <SendButton />
+    </form>
+  </main>
+  <PageFooter />
 </template>
 
 <script>
 import { mockEmployeeCard } from './mockData';
+import PageHeader from './components/PageHeader.vue';
 import ProfileCard from './components/ProfileCard.vue';
-import SavingsCard from './components/SavingsCard.vue';
 import SendCard from './components/SendCard.vue';
 import AdditionCard from './components/AdditionCard.vue';
+import SendButton from './components/SendButton.vue'
+import PageFooter from './components/PageFooter.vue';
 
 export default {
   name: 'App',
   components: {
+    PageHeader,
     ProfileCard,
-    SavingsCard,
     SendCard,
-    AdditionCard
+    AdditionCard,
+    SendButton,
+    PageFooter
   },
   data() {
     return {
@@ -29,7 +39,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

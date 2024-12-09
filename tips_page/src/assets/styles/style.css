@@ -368,8 +368,6 @@ header .header_logo{
 .container{
     position: relative;
     width:100%;
-    height:0px;
-    visibility: hidden;
     transition: var(--animation-time);
     animation-timing-function:var(--amination-func);
     overflow: hidden;

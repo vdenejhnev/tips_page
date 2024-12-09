@@ -1,30 +1,111 @@
 <template>
-    <div class="send-card">
-      <h3>Отправить на мечту</h3>
-      <ul>
-        <li v-for="amount in availableAmounts" :key="amount">
-          <input type="radio" :value="amount" v-model="selectedAmount" />
-          <label>{{ amount }} ₽</label>
-        </li>
-      </ul>
-      <h4>Выберите подарок:</h4>
-      <ul>
-        <li v-for="gift in gifts" :key="gift.value">
-          <input type="radio" :value="gift.value" v-model="selectedGift" />
-          <label>{{ gift.text }}</label>
-        </li>
-      </ul>
+  <section>
+    <div id="send_card" class="card_wrapper">
+      <div class="card_inside">
+        <div class="card_piece">
+          <div class="inner_piece">
+            <div class="card_header__text">
+              <h3>Отправить на мечту</h3>
+            </div>
+            <div id="output_price">
+              <h3>0₽</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card_piece">
+          <div class="inner_piece">
+            <div class="card_regular__text">
+              <h3>Быстрый выбор</h3>
+            </div>
+            <ul id="fast_choice" data-simplebar class="choice has_scroll">
+              <li class="option" v-for="amount in availableAmounts" :key="amount">
+                <input type="radio" name="choice" :value="amount" />
+                <div class="option_price">
+                  <h3>{{ amount }}₽</h3>
+                </div>
+                <svg width="102" height="100" viewBox="0 0 102 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.1"
+                    d="M30.9146 10.3397C62.793 8.49872 120.888 47.3012 134.571 76.1524C149.066 106.716 125.683 138.583 93.9368 144.695C54.4984 152.287 3.07563 120.788 -11.6328 82.1095C-20.596 58.5389 -8.40695 40.3402 15.9098 35.6502C46.139 29.8198 90.3782 53.0834 102.766 82.3206C111.079 101.941 98.6169 117.21 77.7087 115.905C41.5687 113.649 23.61 75.5692 23.61 75.5692"
+                    stroke="white" stroke-width="20" stroke-linecap="round" />
+                </svg>
+              </li>
+            </ul>
+          </div>
+          <div class="inner_piece">
+            <div class="card_regular__text">
+              <h3>Введите свою сумму (₽)</h3>
+            </div>
+            <input type="number" name="" min="1" id="total_textarea" placeholder="Например 50₽" />
+            <div class="container">
+              <div class="card_piece" id="expand_menu">
+                <div class="inner_piece">
+                  <div class="card_regular__text">
+                    <h3>Оцените качество работы</h3>
+                  </div>
+                </div>
+                <div class="inner_piece">
+                  <div id="star_box__container">
+                    <div id="quality_of_work">
+                      <h3 id="quality_of_work__text"></h3>
+                    </div>
+                    <div id="stars">
+                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card_piece">
+                <div class="inner_piece">
+                  <div class="card_regular__text">
+                    <h3>За что похвалить сотрудника</h3>
+                  </div>
+                </div>
+                <div class="inner_piece">
+                  <ul data-simplebar id="merits" class="has_scroll">
+                    <li class="merit" v-for="merit in merits" :key="merit">
+                      <div class="merit_container">
+                        <input type="checkbox" name="merits" />
+                        <img :src="require(`../assets/images/${ merit.icon}`)" />
+                        <div class="merit_title">
+                          <h3>{{ merit.name }}</h3>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="inner_piece">
+            <div class="card_regular__text">
+              <h3>Ваш комментарий</h3>
+            </div>
+            <textarea name="" type="text" spellcheck id="comment_textarea" placeholder="Все было замечательно! "
+              rows="5"></textarea>
+            <div class="container">
+              <button type="reset" id="delete_btn">
+                <h3>Стереть</h3>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </template>
+  </section>
+</template>
   
-  <script>
+<script>
   export default {
     props: {
       availableAmounts: {
         type: Array,
         required: true,
       },
-      gifts: {
+      merits: {
         type: Array,
         required: true,
       },
@@ -32,14 +113,9 @@
     data() {
       return {
         selectedAmount: null,
-        selectedGift: null,
       };
     },
   };
-  </script>
+</script>
   
-  <style scoped>
-  .send-card {
-    /* Добавьте стили для карточки отправки */
-  }
-  </style>
+<style scoped></style>

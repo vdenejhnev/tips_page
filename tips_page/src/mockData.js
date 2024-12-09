@@ -1,4 +1,5 @@
 export const mockEmployeeCard = {
+    
     user: {
         avatar: "Photo.png",
         name: "Иван Иванов",
@@ -16,10 +17,10 @@ export const mockEmployeeCard = {
             { value: 10000, text: "Вкусный ужин" },
         ],
         merits: [
-            { name: "Вежливость", icon: "path_to_icon" },
-            { name: "Скорость", icon: "path_to_icon" },
-            { name: "Решил вопрос", icon: "path_to_icon" },
-            { name: "Связь", icon: "path_to_icon" },
+            { name: "Вежливость", icon: "merit1.svg" },
+            { name: "Скорость", icon: "merit2.svg" },
+            { name: "Решил вопрос", icon: "merit3.svg" },
+            { name: "Связь", icon: "merit4.svg" },
         ],
     },
 };

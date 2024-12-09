@@ -67,8 +67,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.profile-card {
-  /* Добавьте стили для карточки профиля */
-}
-</style>
+<style scoped></style>
