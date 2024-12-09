@@ -1,5 +1,5 @@
 export const mockEmployeeCard = {
-    
+
     user: {
         avatar: "Photo.png",
         name: "Иван Иванов",
@@ -23,4 +23,5 @@ export const mockEmployeeCard = {
             { name: "Связь", icon: "merit4.svg" },
         ],
     },
+    hidden: ['addition']
 };

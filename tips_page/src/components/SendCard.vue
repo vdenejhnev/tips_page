@@ -37,47 +37,8 @@
             </div>
             <input type="number" name="" min="1" id="total_textarea" placeholder="Например 50₽" />
             <div class="container">
-              <div class="card_piece" id="expand_menu">
-                <div class="inner_piece">
-                  <div class="card_regular__text">
-                    <h3>Оцените качество работы</h3>
-                  </div>
-                </div>
-                <div class="inner_piece">
-                  <div id="star_box__container">
-                    <div id="quality_of_work">
-                      <h3 id="quality_of_work__text"></h3>
-                    </div>
-                    <div id="stars">
-                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
-                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
-                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
-                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
-                      <i class="fa-solid fa-star"><input type="checkbox" name="stars" /></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card_piece">
-                <div class="inner_piece">
-                  <div class="card_regular__text">
-                    <h3>За что похвалить сотрудника</h3>
-                  </div>
-                </div>
-                <div class="inner_piece">
-                  <ul data-simplebar id="merits" class="has_scroll">
-                    <li class="merit" v-for="merit in merits" :key="merit">
-                      <div class="merit_container">
-                        <input type="checkbox" name="merits" />
-                        <img :src="require(`../assets/images/${ merit.icon}`)" />
-                        <div class="merit_title">
-                          <h3>{{ merit.name }}</h3>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <SetRating />
+              <SetCompliment :merits="merits"/>
             </div>
           </div>
           <div class="inner_piece">
@@ -99,7 +60,14 @@
 </template>
   
 <script>
+  import SetCompliment from './SetCompliment.vue';
+  import SetRating from './SetRating.vue';
+
   export default {
+    components: {
+      SetRating,
+      SetCompliment,
+    },
     props: {
       availableAmounts: {
         type: Array,

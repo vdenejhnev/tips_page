@@ -8,6 +8,7 @@
       <SendButton />
     </form>
   </main>
+  <AddInfoPopup :gifts="employeeCard.options.gifts"/>
   <PageFooter />
 </template>
 
@@ -18,6 +19,7 @@ import ProfileCard from './components/ProfileCard.vue';
 import SendCard from './components/SendCard.vue';
 import AdditionCard from './components/AdditionCard.vue';
 import SendButton from './components/SendButton.vue'
+import AddInfoPopup from './components/AddInfoPopup.vue'
 import PageFooter from './components/PageFooter.vue';
 
 export default {
@@ -28,6 +30,7 @@ export default {
     SendCard,
     AdditionCard,
     SendButton,
+    AddInfoPopup,
     PageFooter
   },
   data() {
